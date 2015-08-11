@@ -10,7 +10,7 @@ module.exports = function (grunt) {
       },
       build: {
 		files: {
-		  'tmp/<%= pkg.file %>.min.js':'src/<%=pkg.file %>.js'
+		  'dist/<%= pkg.file %>.js':'src/<%=pkg.file %>.js'
 		}
       }
     },
@@ -23,25 +23,12 @@ module.exports = function (grunt) {
         'src/*.js'
       ]
     },
-    concat: {
-      options: {
-        separator: ';',
-        stripBanners: true
-      },
-      js:{
-        src: [
-          'bower_components/jquery-shapefly-client/dist/jquery-shapefly-client.js',
-          'tmp/<%= pkg.file %>.min.js'
-        ],
-        dest: "dist/<%= pkg.file %>.js"
-      }
-    },
     copy: {
       build: {
 	    files: [{
 			expand: true,
 			cwd: 'bower_components/jquery-shapefly-client/dist/',
-			src: '**/*.html',
+			src: '**/*',
 			dest:'dist/'
 		  },{
 			expand: true,
@@ -53,5 +40,5 @@ module.exports = function (grunt) {
 	},
   });
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-  grunt.registerTask('default', ['jshint','uglify','concat','copy']);
+  grunt.registerTask('default', ['jshint','uglify','copy']);
 };
