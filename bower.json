@@ -6,8 +6,7 @@
   ],
   "description": "Insert read-make shapes online, such as rectangles and circles, arrows,, lines, flowchart symbols, and callouts.",
   "main": [
-    "dist/tinymce-plugin-shapefly.js",	
-    "dist/wordpress-plugin-shapefly.php"
+    "dist/tinymce-plugin-shapefly.js"
   ],
   "keywords": [
     "shapes",
