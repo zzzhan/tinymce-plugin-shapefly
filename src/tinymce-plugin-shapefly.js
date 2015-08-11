@@ -10,7 +10,7 @@ tinymce.create('tinymce.plugins.shapefly', {
 	init : function(ed, url) {
 	  console.log(url);
 	  var el = $('#'+(ed.editorId||ed.id));
-	  var shapefly = el.shapefly();
+	  var shapefly = el.shapefly({url:'//localhost/editor'});
 	  shapefly.on('shapefly', function(event, img){
 		tinymce.execCommand('mceInsertContent',true, img);
 	  });
