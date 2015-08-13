@@ -7,8 +7,8 @@ tinymce.create('tinymce.plugins.shapefly', {
 	 * @param {tinymce.Editor} ed Editor instance that the plugin is initialized in.
 	 * @param {string} url Absolute URL to where the plugin is located.
 	 */
-	init : function(ed, url) {
-	  console.log(url);
+	init : function(ed) {
+	  //console.log(url);
 	  var el = $('#'+(ed.editorId||ed.id));
 	  var shapefly = el.shapefly({url:'//localhost/editor'});
 	  shapefly.on('shapefly', function(event, img){
@@ -23,7 +23,7 @@ tinymce.create('tinymce.plugins.shapefly', {
 	  // Add a button that opens a window
 	  ed.addButton('shapefly', {
 		text: 'Shapefly',
-		image : 'http://static2.wikia.nocookie.net/__cb20090624134711/runescape/images/8/85/Smiley.svg',
+		image : '//shapefly.com/favicon.ico',
 		onclick: function(e) {
 		  var content = ed.selection.getContent();
 		  if(content!=='') {
