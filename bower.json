@@ -30,6 +30,6 @@
     "package.json"
   ],
   "dependencies": {
-    "jquery-shapefly-client": "https://github.com/zzzhan/jquery-shapefly-client.git",
+    "jquery-shapefly-client": "https://github.com/zzzhan/jquery-shapefly-client.git"
   }
 }
