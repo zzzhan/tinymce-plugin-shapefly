@@ -11,7 +11,7 @@ tinymce.create('tinymce.plugins.shapefly', {
 	  var idstr = (ed.editorId||ed.id);
 	  //console.log(idstr);
 	  var el = $('#'+idstr);
-	  var shapefly = el.shapefly({url:'http://localhost/editor'});
+	  var shapefly = el.shapefly({url:'//localhost/editor'});
 	  shapefly.on('shapefly', function(event, img){
 		tinymce.execCommand('mceInsertContent',true, img);
 	  });
@@ -25,7 +25,7 @@ tinymce.create('tinymce.plugins.shapefly', {
 	  // Add a button that opens a window
 	  ed.addButton('shapefly', {
 		text: 'Shapefly',
-		image : 'http://localhost/favicon.ico',
+		image : '//shapefly.com/favicon.ico',
 		onclick: function(e) {
 		  var content = ed.selection.getContent();
 		  if(content!=='') {
