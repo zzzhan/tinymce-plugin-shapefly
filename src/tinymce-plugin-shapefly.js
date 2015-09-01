@@ -7,14 +7,16 @@ tinymce.create('tinymce.plugins.shapefly', {
 	 * @param {tinymce.Editor} ed Editor instance that the plugin is initialized in.
 	 * @param {string} url Absolute URL to where the plugin is located.
 	 */
-	init : function(ed, url) {
-	  console.log(url);
-	  var el = $('#'+(ed.editorId||ed.id));
-	  var shapefly = el.shapefly({url:'//localhost/editor'});
+	init : function(ed) {
+	  var idstr = (ed.editorId||ed.id);
+	  //console.log(idstr);
+	  var el = $('#'+idstr);
+	  var shapefly = el.shapefly({url:'http://localhost/editor'});
 	  shapefly.on('shapefly', function(event, img){
 		tinymce.execCommand('mceInsertContent',true, img);
 	  });
-	  ed.onInit.add(function(ed) {
+	  //ed.onInit.add(function(ed) {
+	  ed.on('init', function(){
 	    //console.debug(ed.dom);
 	    var container = $(ed.dom.doc.body);
 	    $('.shapefly-edit', container).remove();
