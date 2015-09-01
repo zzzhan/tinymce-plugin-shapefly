@@ -10,7 +10,7 @@ module.exports = function (grunt) {
       },
       build: {
 		files: {
-		  'dist/<%= pkg.file %>.js':'src/<%=pkg.file %>.js'
+		  'dist/<%= pkg.file %>.min.js':'src/<%=pkg.file %>.js'
 		}
       }
     },
@@ -23,22 +23,18 @@ module.exports = function (grunt) {
         'src/*.js'
       ]
     },
+    clean: ['dist'],
     copy: {
       build: {
 	    files: [{
 			expand: true,
-			cwd: 'bower_components/jquery-shapefly-client/dist/',
-			src: '**/*',
-			dest:'dist/'
-		  },{
-			expand: true,
 			cwd: 'src',
-			src: '**/*.php',
+			src: '**/*.js',
 			dest:'dist/'
 		  }]
 	  }
 	},
   });
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-  grunt.registerTask('default', ['jshint','uglify','copy']);
+  grunt.registerTask('default', ['jshint','clean','uglify','copy']);
 };

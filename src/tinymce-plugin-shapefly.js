@@ -23,7 +23,7 @@ tinymce.create('tinymce.plugins.shapefly', {
 	  // Add a button that opens a window
 	  ed.addButton('shapefly', {
 		text: 'Shapefly',
-		image : 'http://static2.wikia.nocookie.net/__cb20090624134711/runescape/images/8/85/Smiley.svg',
+		image : 'http://localhost/favicon.ico',
 		onclick: function(e) {
 		  var content = ed.selection.getContent();
 		  if(content!=='') {
@@ -58,7 +58,7 @@ tinymce.create('tinymce.plugins.shapefly', {
 	 */
 	getInfo : function() {
 		return {
-			longname : 'Shapefly Buttons',
+			longname : 'Shapefly Button',
 			author : 'zzzhan',
 			authorurl : 'http://github.com/zzzhan',
 			infourl : 'http://github.com/zzzhan/tinymce-plugin-shapefly',

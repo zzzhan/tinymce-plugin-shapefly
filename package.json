@@ -2,9 +2,10 @@
   "name": "tinymce-plugin-shapefly",
   "file": "tinymce-plugin-shapefly",
   "version": "0.1.0",
-  "description": "Insert read-make shapes online, such as rectangles and circles, arrows,, lines, flowchart symbols, and callouts.",
+  "description": "Tinymce plugin for inserting ready-make shapes online, such as rectangles and circles, arrows,, lines, flowchart symbols, and callouts.",
   "devDependencies": {
     "grunt": "~0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-jshint": "^0.11.2",
     "grunt-contrib-uglify": "^0.9.1",
