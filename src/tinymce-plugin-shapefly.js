@@ -10,30 +10,33 @@ tinymce.create('tinymce.plugins.shapefly', {
 	init : function(ed) {
 	  var idstr = (ed.editorId||ed.id);
 	  //console.log(idstr);
-	  var el = $('#'+idstr);
-	  var shapefly = el.shapefly({url:'//localhost/editor'});
-	  shapefly.on('shapefly', function(event, img){
-		tinymce.execCommand('mceInsertContent',true, img);
+	  var el = document.getElementById(idstr);
+	  var sfplugin = shapefly.plugin(el, {url:'//localhost/editor',
+	    finish: function(img) {
+		  tinymce.execCommand('mceInsertContent',true, img);
+		}
 	  });
 	  //ed.onInit.add(function(ed) {
 	  ed.on('init', function(){
-	    //console.debug(ed.dom);
-	    var container = $(ed.dom.doc.body);
-	    $('.shapefly-edit', container).remove();
-	    el.shapefly('bindImgEvent', container);
+		sfplugin.initEditTag(ed.dom.doc.body);
 	  });
 	  // Add a button that opens a window
 	  ed.addButton('shapefly', {
+	    tooltip:'Insert ready-made shapes.',
 		text: 'Shapefly',
-		image : '//shapefly.com/favicon.ico',
-		onclick: function(e) {
+		icon: 'shapefly',
+		//image : '//localhost/favicon.ico',
+		onclick: function() {
 		  var content = ed.selection.getContent();
+		  var uuid = null;
 		  if(content!=='') {
-		  var uuid = $(content).data('sf-uuid');
-			//console.log(uuid);
-			el.data('shapefly').uuid = uuid;
+		    var tmp = document.createElement('div');
+			tmp.innerHTML = content;
+			var img = tmp.childNodes[0];
+			uuid = img.getAttribute('data-sf-uuid');
+			console.log(uuid);
 		  }
-		  el.shapefly('open', e);
+		  sfplugin.open(uuid);
 		}
 	  });
 	},

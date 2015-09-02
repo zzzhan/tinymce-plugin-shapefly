@@ -23,18 +23,28 @@ module.exports = function (grunt) {
         'src/*.js'
       ]
     },
+    cssmin: {
+      options: {
+        report: 'gzip'
+      },
+      build: {
+        files: {
+        'dist/<%= pkg.file %>.min.css':'src/<%=pkg.file %>.css'
+        }
+      }
+    },
     clean: ['dist'],
     copy: {
       build: {
 	    files: [{
 			expand: true,
 			cwd: 'src',
-			src: '**/*.js',
+			src: '**/*',
 			dest:'dist/'
 		  }]
 	  }
 	},
   });
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-  grunt.registerTask('default', ['jshint','clean','uglify','copy']);
+  grunt.registerTask('default', ['jshint','clean','uglify','cssmin','copy']);
 };
