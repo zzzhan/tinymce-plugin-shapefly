@@ -11,7 +11,7 @@ tinymce.create('tinymce.plugins.shapefly', {
 	  var idstr = (ed.editorId||ed.id);
 	  //console.log(idstr);
 	  var el = document.getElementById(idstr);
-	  var sfplugin = shapefly.plugin(el, {url:'//localhost/editor',
+	  var sfplugin = shapefly.plugin(el, {url:'http://shapefly.com/editor',
 	    finish: function(img) {
 		  tinymce.execCommand('mceInsertContent',true, img);
 		}
@@ -22,7 +22,7 @@ tinymce.create('tinymce.plugins.shapefly', {
 	  });
 	  // Add a button that opens a window
 	  ed.addButton('shapefly', {
-	    tooltip:'Inserting ready-made shapes.',
+	    tooltip:'Insert ready-made shapes,such as rectangles and circles, arrows, lines, flowchart symbols, and callouts.',
 		text: 'Shapefly',
 		icon: 'shapefly',
 		//image : '//localhost/favicon.ico',
@@ -63,7 +63,7 @@ tinymce.create('tinymce.plugins.shapefly', {
 	 */
 	getInfo : function() {
 		return {
-			longname : 'Shapefly Button',
+			longname : 'Insert ready-made shapes,such as rectangles and circles, arrows, lines, flowchart symbols, and callouts.',
 			author : 'zzzhan',
 			authorurl : 'http://github.com/zzzhan',
 			infourl : 'http://github.com/zzzhan/tinymce-plugin-shapefly',

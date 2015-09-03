@@ -4,7 +4,7 @@
   "authors": [
     "zzzhan <chunzhan.he@gmail.com>"
   ],
-  "description": "Tinymce plugin for inserting ready-make shapes online, such as rectangles and circles, arrows,, lines, flowchart symbols, and callouts.",
+  "description": "TinyMCE plugin for inserting ready-make shapes online, such as rectangles and circles, arrows,, lines, flowchart symbols, and callouts.",
   "main": [
     "dist/tinymce-plugin-shapefly.js"
   ],
@@ -26,6 +26,7 @@
     "bower_components",
     "test",
     "tests",
+	"src",
     "index.html",
     "Gruntfile.js",
     "package.json"
