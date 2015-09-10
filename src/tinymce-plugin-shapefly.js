@@ -22,10 +22,9 @@ tinymce.create('tinymce.plugins.shapefly', {
 	  });
 	  // Add a button that opens a window
 	  ed.addButton('shapefly', {
-	    tooltip:'Insert ready-made shapes,such as rectangles and circles, arrows, lines, flowchart symbols, and callouts.',
-		text: 'Shapefly',
+	    tooltip:'Insert ready-made shapes from shapefly.com,such as rectangles and circles, arrows, lines, flowchart symbols, and callouts.',
+		title: 'Shapefly',
 		icon: 'shapefly',
-		//image : '//localhost/favicon.ico',
 		onclick: function() {
 		  var content = ed.selection.getContent();
 		  var uuid = null;
